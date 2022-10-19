@@ -12,13 +12,13 @@ resource "ssh_resource" "deploy" {
 
     file {
         content = file("deploy.sh")
-        destination = "/tmp/deploy.sh"
+        destination = "~/tmp/deploy.sh"
         permissions = "7"
     }
 
     commands = [
-        "/tmp/deploy.sh",
-        "rm -rfd /tmp"
+        "~/tmp/deploy.sh",
+        "rm -rfd ~/tmp"
     ]
 }
 
