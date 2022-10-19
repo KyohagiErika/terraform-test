@@ -1,7 +1,12 @@
-echo $(cd ~/terraform-test)
+echo =====Checkout project folder=====
 cd ~/terraform-test
-echo $(git pull)
-echo $(docker compose down)
-echo $(docker compose build --no-cache)
-echo $(docker compose up -d)
+echo =====Pull the latest=====
+git pull
+echo =====Docker Compose down=====
+docker compose down
+echo =====Docker Compose build======
+docker compose build --no-cache
+echo =====Docker Compose up======
+docker compose up -d
+echo =====DONE!======
 exit 0

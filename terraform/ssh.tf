@@ -13,15 +13,14 @@ resource "ssh_resource" "deploy" {
     file {
         content = file("deploy.sh")
         destination = "deploy.sh"
-        permissions = "7"
+        permissions = "0700"
     }
 
     commands = [
-        "./deploy.sh",
-        "rm deploy.sh"
+        "./deploy.sh && rm ./deploy.sh"
     ]
 }
 
-output "deploy_output" {
+output "deploy_result" {
     value = ssh_resource.deploy.result
 }
