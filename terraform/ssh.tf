@@ -10,7 +10,7 @@ resource "ssh_resource" "deploy" {
 
     when = "create"
 
-    file = {
+    file {
         content = [
             "cd terraform-test",
             "git pull",
