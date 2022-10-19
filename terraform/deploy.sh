@@ -1,5 +1,5 @@
-cd ~/terraform-test
-git pull
-docker compose down
-docker compose build --no-cache
-docker compose up -d
+echo $(cd ~/terraform-test)
+echo $(git pull)
+echo $(docker compose down)
+echo $(docker compose build --no-cache)
+echo $(docker compose up -d)
