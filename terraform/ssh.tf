@@ -13,7 +13,7 @@ resource "ssh_resource" "deploy" {
     file {
         content = file("deploy.sh")
         destination = "/tmp/deploy.sh"
-        permissions = "1"
+        permissions = "7"
     }
 
     commands = [
