@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 9420:9420
+    restart: always
+
+networks:
+  terraform-test:
+    driver: bridge

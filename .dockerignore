@@ -1,0 +1,8 @@
+.terraform.**
+terraform.**
+.gitignore
+**.tf
+README.md
+package-lock.json
+node_modules
+keyfile
