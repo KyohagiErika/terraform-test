@@ -11,13 +11,7 @@ resource "ssh_resource" "deploy" {
     when = "create"
 
     file {
-        content = [
-            "cd terraform-test",
-            "git pull",
-            "docker compose down",
-            "docker compose build",
-            "docker compose up -d"
-        ]
+        content = file("deploy.sh")
         destination = "/tmp/deploy.sh"
     }
 
