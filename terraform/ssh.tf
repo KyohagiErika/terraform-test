@@ -11,7 +11,7 @@ resource "ssh_resource" "deploy" {
     when = "create"
 
     commands = [
-        "rm terraform-test",
+        "rm -rfd terraform-test",
         "git clone https://github.com/KyohagiErika/terraform-test.git",
         "cd terraform-test",
         "docker compose down",
