@@ -10,13 +10,20 @@ resource "ssh_resource" "deploy" {
 
     when = "create"
 
+    file = {
+        content = [
+            "cd terraform-test",
+            "git pull",
+            "docker compose down",
+            "docker compose build",
+            "docker compose up -d"
+        ],
+        destination = "/tmp/deploy.sh"
+    }
+
     commands = [
-        "rm -rfd terraform-test",
-        "git clone https://github.com/KyohagiErika/terraform-test.git",
-        "cd terraform-test",
-        "docker compose down",
-        "docker compose build",
-        "docker compose up -d"
+        "/tmp/deploy.sh",
+        "rm -rfd /tmp"
     ]
 }
 
