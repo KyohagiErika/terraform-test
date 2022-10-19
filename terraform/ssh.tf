@@ -17,7 +17,7 @@ resource "ssh_resource" "deploy" {
     }
 
     commands = [
-        "deploy.sh",
+        "./deploy.sh",
         "rm deploy.sh"
     ]
 }
