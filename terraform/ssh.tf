@@ -23,5 +23,5 @@ resource "ssh_resource" "deploy" {
 }
 
 output "deploy_output" {
-    value = ssh_resource.deploy.result
+    value = try(jsondecode(ssh_resource.deploy.result), {})
 }

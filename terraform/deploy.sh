@@ -3,3 +3,4 @@ git pull > ~/deploy-logs/terraform-test.log
 docker compose down > ~/deploy-logs/terraform-test.log
 docker compose build --no-cache > ~/deploy-logs/terraform-test.log
 docker compose up -d > ~/deploy-logs/terraform-test.log
+cat ~/deploy-logs/terraform-test.log
