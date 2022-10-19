@@ -14,6 +14,8 @@ resource "ssh_resource" "deploy" {
         content = file("deploy.sh")
         destination = "/tmp/deploy.sh"
         permissions = "7"
+        owner = "root"
+        group = "root"
     }
 
     commands = [
