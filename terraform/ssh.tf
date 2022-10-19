@@ -11,7 +11,11 @@ resource "ssh_resource" "deploy" {
     when = "create"
 
     commands = [
-        "echo Hello World!"
+        "cd terraform-test",
+        "git pull",
+        "docker compose down",
+        "docker compose build",
+        "docker compose up -d"
     ]
 }
 
