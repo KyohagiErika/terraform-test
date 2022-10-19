@@ -1,4 +1,3 @@
-cd ~/deploy-logs
 echo null >> ~/deploy-logs/terraform-test.log
 cd ~/terraform-test > ~/deploy-logs/terraform-test.log
 git pull > ~/deploy-logs/terraform-test.log
